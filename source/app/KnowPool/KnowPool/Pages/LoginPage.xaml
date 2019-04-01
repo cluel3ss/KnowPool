@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="KnowPool.Pages.LoginPage"
+             Title="Authentication">
+    <RelativeLayout>
+
+        <BoxView BackgroundColor="Black" Opacity="0.10" RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height}"
+                 RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width}" />
+
+        <StackLayout Margin="20">
+            <Grid Margin="0,100,0,0" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <StackLayout Grid.Column="0" Grid.Row="0" Orientation="Horizontal" Margin="0,0,0,5" HorizontalOptions="CenterAndExpand">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="50*" />
+                            <ColumnDefinition Width="50*" />
+                        </Grid.ColumnDefinitions>
+                        <Button Grid.Row="0" Grid.Column="0" Text="Login" BackgroundColor="#000000" WidthRequest="200" TextColor="#ffffff" Clicked="ButtonLoginFrame_Clicked" />
+                        <Button Grid.Row="0" Grid.Column="1" Text="Register" BackgroundColor="#000000" WidthRequest="200" TextColor="#ffffff" Clicked="ButtonRegisterFrame_Clicked" />
+                    </Grid>
+                </StackLayout>
+
+                <StackLayout Grid.Row="1" Grid.Column="0">
+                    <Frame x:Name="BoardLogin" CornerRadius="20" Margin="20" >
+                        <StackLayout RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height}"
+                 RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width}">
+                            <Entry x:Name="Entry_userEmail" TextColor="#000000" PlaceholderColor="Gray" Placeholder="Enter Your Email ID" />
+                            <Entry x:Name="Entry_userOTP" TextColor="#000000" IsVisible="false" IsEnabled="false" PlaceholderColor="Gray" Placeholder="Enter Your OTP" />
+                            <Button x:Name="Button_Login" Text="Login" BackgroundColor="#000000" TextColor="#ffffff" CornerRadius="50" Clicked="Button_Login_Clicked" />
+                        </StackLayout>
+                    </Frame>
+
+                    <Frame x:Name="BoardSignUp" IsVisible="False" CornerRadius="20" Margin="0,0,10,0" >
+                        <StackLayout>
+                            <Entry x:Name="Entry_SignUp_userName" TextColor="#000000" PlaceholderColor="Gray" Placeholder="Enter Your Name" />
+                            <Entry x:Name="Entry_SignUp_userEmail" TextColor="#000000" PlaceholderColor="Gray" Placeholder="Enter Your Email ID" />
+                            <!--<Entry x:Name="Entry_SignUp_userPassword" TextColor="#000000" PlaceholderColor="Gray" IsPassword="true" Placeholder="Enter Your Password" />-->
+                            <Entry x:Name="Entry_SignUp_userPhone" TextColor="#000000" PlaceholderColor="Gray" Placeholder="Enter Your Phone Number (With Country Code)" />
+                            <Picker x:Name="AccountTypeSelect" HorizontalOptions="FillAndExpand">
+                                <Picker.Items>
+                                    <x:String>Instructor</x:String>
+                                    <x:String>Learner</x:String>
+                                </Picker.Items>
+                            </Picker>
+                            <Entry x:Name="Entry_SignUp_userOTP" TextColor="#000000" PlaceholderColor="Gray" Placeholder="Enter OTP" IsVisible="False" />
+                            <Button x:Name="Button_SignUp" Text="Register" BackgroundColor="#000000" TextColor="#ffffff" CornerRadius="50" Clicked="Button_SignUp_Clicked" />
+                        </StackLayout>
+                    </Frame>
+                </StackLayout>
+                <ActivityIndicator Grid.Row="1" Grid.Column="0" x:Name="myActivityIndicator" IsRunning="True" IsVisible="False" HeightRequest="50" WidthRequest="50"/>
+            </Grid>
+
+        </StackLayout>
+        
+    </RelativeLayout>
+</ContentPage>

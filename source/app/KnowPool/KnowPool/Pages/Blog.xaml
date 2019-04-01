@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="KnowPool.Pages.Blog">
+    <ScrollView>
+        <RelativeLayout>
+            <Grid Margin="0,0,0,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <StackLayout Grid.Row="0" Grid.Column="0" Margin="20">
+                    <StackLayout>
+                        <Label Text="Keywords : " FontAttributes="Bold" FontSize="Large" />
+                        <Label x:Name="Label_BlogKeywords" FontSize="Medium" />
+                    </StackLayout>
+                    <StackLayout>
+                        <Label Text="Content : " FontAttributes="Bold" FontSize="Large" />
+                        <Label x:Name="Label_BlogDescription" FontSize="Medium" />
+                    </StackLayout>
+                </StackLayout>
+
+                <ActivityIndicator Grid.Row="0" Grid.Column="0" x:Name="myActivityIndicator" IsRunning="True" IsVisible="False" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+            </Grid>
+        </RelativeLayout>
+    </ScrollView>
+</ContentPage>

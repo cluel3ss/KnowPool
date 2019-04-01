@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="KnowPool.Pages.Dashboard"
+             Title="All Courses">
+    <RelativeLayout>
+        <Grid Margin="0,0,0,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <ListView Grid.Row="0" Grid.Column="0" x:Name="ListView_CourseList" HasUnevenRows="True"
+              IsPullToRefreshEnabled="True" Refreshing="ListView_CourseList_Refreshing"
+                  ItemSelected="ListView_CourseList_ItemSelected" SeparatorColor="Black">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal" Padding="5">
+                                <Image Source="{Binding  c_photo}" Aspect="AspectFill" WidthRequest="80" HeightRequest="80"/>
+                                <StackLayout HorizontalOptions="StartAndExpand" Padding="2">
+                                    <Label Text="{Binding c_name}" TextColor="Black" FontSize="Large"/>
+                                    <Label Text="{Binding c_use}" TextColor="Gray" FontSize="Medium" />
+                                </StackLayout>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            <ActivityIndicator Grid.Row="0" Grid.Column="0" x:Name="myActivityIndicator" IsRunning="True" IsVisible="False" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+
+            <Button Grid.Row="1" Grid.Column="0" Margin="0,0,10,10" x:Name="Button_NewPost" Text="+" CornerRadius="100" FontSize="50" IsVisible="False" BackgroundColor="#000000" TextColor="#ffffff" HorizontalOptions="EndAndExpand" VerticalOptions="EndAndExpand" Clicked="Button_NewPost_Clicked"/>
+
+        </Grid>
+    </RelativeLayout>
+</ContentPage>

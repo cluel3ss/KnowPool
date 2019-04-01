@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="KnowPool.Pages.AddNewBlogPage"
+             Title="New Blog">
+    <ScrollView>
+        <RelativeLayout>
+            <Grid Margin="0,0,0,0" RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height}"
+                 RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width}">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <StackLayout Margin="5" Grid.Row="0" Grid.Column="0" RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height}"
+                 RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width}">
+                    <Picker x:Name="CoursePicker" HorizontalOptions="FillAndExpand">
+                    </Picker>
+                    <Entry x:Name="Entry_BlogTitle" Placeholder="Add A Blog Title" />
+                    <Entry x:Name="Entry_BlogKeywords" Placeholder="Add Keywords (Separated by Commas)" />
+                    <Entry x:Name="Entry_BlogContent" Placeholder="Add Content" HeightRequest="400" />
+
+                    <Button x:Name="Button_SubmitBlog" Text="Submit" BackgroundColor="#000000" TextColor="#ffffff" CornerRadius="50" HorizontalOptions="CenterAndExpand" VerticalOptions="EndAndExpand" Clicked="Button_SubmitBlog_Clicked" />
+                </StackLayout>
+
+                <ActivityIndicator Grid.Row="0" Grid.Column="0" x:Name="myActivityIndicator" IsRunning="True" IsVisible="False" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+            </Grid>
+        </RelativeLayout>
+    </ScrollView>
+</ContentPage>

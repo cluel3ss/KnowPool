@@ -1,0 +1,9 @@
+source/app/.vs
+source/app/KnowPool/KnowPool.Android/bin/Debug
+source/app/KnowPool/KnowPool.Android/obj
+source/app/KnowPool/KnowPool.iOS/bin/iPhoneSimulator/Debug
+source/app/KnowPool/KnowPool.iOS/obj
+source/app/KnowPool/KnowPool/obj
+source/app/KnowPool/KnowPool/bin
+source/app/KnowPool/KnowPool.UWP/bin/
+source/app/KnowPool/KnowPool.UWP/obj/

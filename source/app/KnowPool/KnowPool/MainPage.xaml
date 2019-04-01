@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:KnowPool"
+             x:Class="KnowPool.MainPage"
+             Title="KnowPOOL">
+
+    <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height}"
+                 RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width}"
+                 Margin="20, 0, 20, 20">
+        <Label TextColor="#000000" Margin="0">
+            <Label.FormattedText>
+                <FormattedString>
+                    <Span Text="Know" FontSize="50" />
+                    <Span Text=" POOL" FontAttributes="Bold" FontSize="70" />
+                </FormattedString>
+            </Label.FormattedText>
+        </Label>
+        <Button x:Name="Button_Go" BackgroundColor="Black" CornerRadius="50" TextColor="White" FontSize="Large" Clicked="Button_Go_Clicked" />
+
+        <Label x:Name="Tagline_Label"
+               VerticalOptions="EndAndExpand"
+               HorizontalOptions="CenterAndExpand"
+               TextColor="#000000"
+               FontSize="Micro"
+               Margin="0,0,0,0"/>
+    </StackLayout>
+
+</ContentPage>

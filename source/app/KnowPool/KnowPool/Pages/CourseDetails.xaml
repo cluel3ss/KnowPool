@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="KnowPool.Pages.CourseDetails">
+    <ScrollView>
+        <RelativeLayout>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <StackLayout>
+                    <StackLayout Grid.Row="0" Grid.Column="0" Orientation="Horizontal" Margin="10,20,0,5">
+                        <StackLayout>
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="Usage : " FontAttributes="Bold" FontSize="Large" />
+                                <Label x:Name="Label_CourseUse" FontSize="Medium"/>
+                            </StackLayout>
+
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="Description : " FontAttributes="Bold" FontSize="Large" />
+                                <Label x:Name="Label_CourseDescription" FontSize="Medium" />
+                            </StackLayout>
+                        </StackLayout>
+                        <Image x:Name="Image_CourseImage" WidthRequest="100" HeightRequest="100"/>
+                    </StackLayout>
+
+                    <!--<BoxView Grid.Row="1" Grid.Column="0" BackgroundColor="#000000" />-->
+                    <Label Grid.Row="1" Grid.Column="0" Text="Instructors For This Course" HorizontalTextAlignment="Center" FontSize="Large" TextColor="#ffffff" BackgroundColor="#000000"/>
+
+                    <StackLayout Grid.Row="2" Grid.Column="0">
+                        <ListView x:Name="ListView_CourseInstructors" HasUnevenRows="True"
+              IsPullToRefreshEnabled="True" Refreshing="ListView_CourseInstructors_Refreshing"
+                  ItemSelected="ListView_CourseInstructors_ItemSelected" SeparatorColor="Black">
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <ViewCell>
+                                        <StackLayout Orientation="Horizontal" Padding="5">
+                                            <Label Text="{Binding c_name}" TextColor="Black" FontSize="Large" Margin="5"/>
+                                            <!--<Label Text="{Binding c_name}">
+                                                <Label.GestureRecognizers>
+                                                    <TapGestureRecognizer
+                                                        Command="{Binding TapCommand}"
+                                                        CommandParameter="Label1" />
+                                                </Label.GestureRecognizers>
+                                                </Label>-->
+                                        </StackLayout>
+                                    </ViewCell>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                    </StackLayout>
+                    <ActivityIndicator Grid.Row="2" Grid.Column="0" x:Name="myActivityIndicator" IsRunning="True" IsVisible="False" HorizontalOptions="CenterAndExpand" VerticalOptions="Start"/>
+                </StackLayout>
+            </Grid>
+        </RelativeLayout>
+    </ScrollView>
+</ContentPage>
