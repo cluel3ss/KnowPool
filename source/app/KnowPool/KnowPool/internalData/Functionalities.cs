@@ -9,9 +9,9 @@ namespace KnowPool.internalData
 {
     public class Functionalities
     {
-        private static readonly string sendgrid_key = "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";
-        private const string accountSid = "AC02c1c2b84adbeee7efd56db0a0ee9d19";
-        private const string authToken = "03b5d61d630e878b6f74cc5158a175d4";
+        private static readonly string sendgrid_key = "ENTERYOURKEY";
+        private const string accountSid = "ENTERSSID";
+        private const string authToken = "ENTERSSID";
         public enum EventType {
             verification,
             login
